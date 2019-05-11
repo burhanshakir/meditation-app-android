@@ -7,4 +7,5 @@
     <color name="bottomTab">#212025</color>
     <color name="bgColor">#0e0e10</color>
     <color name="textTint">#00BCf8</color>
+    <color name="light_blue">#2ca2b6</color>
 </resources>

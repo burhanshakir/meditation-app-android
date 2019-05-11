@@ -16,4 +16,6 @@
     <string name="action_settings">Settings</string>
     <string name="about">About</string>
     <string name="settings_fragment">Settings Fragment</string>
+    <string name="basic_chakra_cuning">Basic Chakra Cuning</string>
+    <string name="start">Start</string>
 </resources>
