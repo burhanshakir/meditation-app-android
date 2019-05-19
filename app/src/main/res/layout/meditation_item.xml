@@ -25,7 +25,7 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:id="@+id/tvMeditationName"
+            android:id="@+id/tvTitle"
             android:text="@string/basic_chakra_cuning"
     />
 

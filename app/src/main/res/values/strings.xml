@@ -18,4 +18,10 @@
     <string name="settings_fragment">Settings Fragment</string>
     <string name="basic_chakra_cuning">Basic Chakra Cuning</string>
     <string name="start">Start</string>
+    <string name="view">View</string>
+    <string name="start_now">Start Now</string>
+    <string name="_00_00_mins">00:00 mins</string>
+    <string name="avg_meditation_time">Avg Meditation Time</string>
+    <string name="_0">0</string>
+    <string name="meditation_streak">Meditation Streak</string>
 </resources>

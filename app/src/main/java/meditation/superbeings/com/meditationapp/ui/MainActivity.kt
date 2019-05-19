@@ -9,9 +9,9 @@ import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import meditation.superbeings.com.meditationapp.R
-import meditation.superbeings.com.meditationapp.ui.InstructionModule.InstructionFragment
-import meditation.superbeings.com.meditationapp.ui.MeditationsModule.MeditationsFragment
-import meditation.superbeings.com.meditationapp.ui.SettingsModule.SettingsFragment
+import meditation.superbeings.com.meditationapp.ui.instructionModule.InstructionFragment
+import meditation.superbeings.com.meditationapp.ui.meditationsModule.MeditationsFragment
+import meditation.superbeings.com.meditationapp.ui.settingsModule.SettingsFragment
 import meditation.superbeings.com.meditationapp.ui.homeModule.HomeFragment
 
 class MainActivity : AppCompatActivity()

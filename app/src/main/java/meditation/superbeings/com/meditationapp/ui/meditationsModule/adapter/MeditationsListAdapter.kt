@@ -1,4 +1,4 @@
-package meditation.superbeings.com.meditationapp.ui.MeditationsModule.adapter
+package meditation.superbeings.com.meditationapp.ui.meditationsModule.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -44,7 +44,7 @@ class MeditationsListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
     {
         fun bindView(meditation : Meditation)
         {
-            itemView.tvMeditationName.text = meditation.title
+            itemView.tvTitle.text = meditation.title
         }
     }
 
