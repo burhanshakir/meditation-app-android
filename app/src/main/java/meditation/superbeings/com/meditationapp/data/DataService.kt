@@ -72,13 +72,13 @@ object DataService
     )
 
     private val meditations = listOf(
-        Meditation(title = Constants.basicChakra,imageName= "basic_chakra.png",subMeditations= basicChakraCuningSubMeditations, description= "Experience stereoscopic view along with music"),
+        Meditation(title = Constants.basicChakra,imageName= "basic_chakra",subMeditations= basicChakraCuningSubMeditations, description= "Experience stereoscopic view along with music"),
 
-        Meditation(title= Constants.advChakra, imageName= "adv-chakra.png",subMeditations= advChakraCuningSubMeditations, description= "Experience the Stereoscopic View with Music"),
+        Meditation(title= Constants.advChakra, imageName= "adv_chakra",subMeditations= advChakraCuningSubMeditations, description= "Experience the Stereoscopic View with Music"),
 
-        Meditation(title= Constants.sourceCode, imageName= "source-code.png",subMeditations= sourceCodeSubMeditations, description= "Advanced Inner Work Using Targeted Symbols"),
+        Meditation(title= Constants.sourceCode, imageName= "source_code",subMeditations= sourceCodeSubMeditations, description= "Advanced Inner Work Using Targeted Symbols"),
 
-        Meditation(title= Constants.gspace, imageName= "g-space.png",subMeditations= gSpaceSubMeditations, description= "Come Together with Others to Powerful Effect")
+        Meditation(title= Constants.gspace, imageName= "g_space",subMeditations= gSpaceSubMeditations, description= "Come Together with Others to Powerful Effect")
     )
 
     private val instructions = listOf(
@@ -114,9 +114,9 @@ object DataService
     {
         return listOf(
 
-            Meditation(title = "Centeredness", imageName = "31-centeredness"),
-            Meditation(title = "Solarplex", imageName = "12-solaplex"),
-            Meditation(title = "Forward Thinking", imageName = "3-forwardthinking")
+            Meditation(title = "Centeredness", imageName = "centeredness"),
+            Meditation(title = "Solarplex", imageName = "solarplex"),
+            Meditation(title = "Forward Thinking", imageName = "forwardthinking")
         )
     }
 

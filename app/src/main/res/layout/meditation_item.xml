@@ -13,7 +13,6 @@
             android:layout_height="0dp"
             android:layout_weight="2"
             android:layout_gravity="center"
-            android:src="@drawable/basic_chakra"
             android:id="@+id/ivMeditation"
             android:layout_marginBottom="5dp"
             />

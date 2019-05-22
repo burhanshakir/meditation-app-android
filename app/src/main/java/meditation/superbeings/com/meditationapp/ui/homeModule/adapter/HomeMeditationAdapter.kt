@@ -1,11 +1,11 @@
 package meditation.superbeings.com.meditationapp.ui.homeModule.adapter
 
-import android.support.v7.view.menu.ActionMenuItemView
-import android.support.v7.view.menu.MenuView
+import meditation.superbeings.com.meditationapp.utils.Constants
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.home_meditation_item.view.*
 import meditation.superbeings.com.meditationapp.R
 import meditation.superbeings.com.meditationapp.data.Meditation
@@ -43,6 +43,9 @@ class HomeMeditationAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> ()
         fun bindView(meditation : Meditation)
         {
             itemView.tvName.text = meditation.title
+            Picasso.get()
+                .load(Constants.getImageFromString(itemView,meditation.imageName,itemView.context.packageName))
+                .into(itemView.ivMeditation)
         }
     }
 
