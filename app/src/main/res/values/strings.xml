@@ -37,4 +37,7 @@
     <string name="g_space_settings">G Space Settings</string>
     <string name="source_code_settings">Source Code Settings</string>
     <string name="chakra_cuning_settings">Chakra Cuning settings</string>
+    <string name="hours">Hours</string>
+    <string name="mins">Mins</string>
+    <string name="save">Save</string>
 </resources>

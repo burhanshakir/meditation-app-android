@@ -1,7 +1,9 @@
 package meditation.superbeings.com.meditationapp.ui.settingsModule
 
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
@@ -35,6 +37,8 @@ class SettingsFragment : Fragment() {
     var isMusicEnabled : Boolean = false
     var isLandscapeEnabled : Boolean = true
     var isReminderEnabled : Boolean = false
+
+    private val RESULT_CODE = 3
 
     companion object
     {
@@ -72,6 +76,13 @@ class SettingsFragment : Fragment() {
         llGSpace.setOnClickListener(View.OnClickListener { selectedMeditationChanged(Constants.gSpaceSettings, llGSpace) })
         llSourceCode.setOnClickListener(View.OnClickListener { selectedMeditationChanged(Constants.sourceCodeSettings, llSourceCode) })
         bEnter.setOnClickListener(View.OnClickListener { settingsSaved(selectedMeditation) })
+
+        tvTimer.setOnClickListener(View.OnClickListener {
+
+            val intent = Intent(activity!!.applicationContext, SetTimerActivity::class.java)
+            startActivityForResult(intent, RESULT_CODE)
+
+        })
 
         loadSettings(selectedMeditation)
     }
@@ -137,5 +148,24 @@ class SettingsFragment : Fragment() {
         editor.apply()
 
         Toast.makeText(activity!!.baseContext, "Settings saved!", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
+    {
+        super.onActivityResult(requestCode, resultCode, data)
+
+
+        if (resultCode == Activity.RESULT_OK)
+        {
+            Log.i("onActivityResult", "Received")
+            timerValue = data!!.getIntExtra("result", 0)
+
+            val hours = data.getIntExtra("hours", 0)
+            val mins = data.getIntExtra("mins", 0)
+
+            tvTimer.setText(hours.toString() + "H:" + mins.toString() + "M:00S" )
+
+        }
+
     }
 }
