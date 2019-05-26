@@ -24,4 +24,17 @@
     <string name="avg_meditation_time">Avg Meditation Time</string>
     <string name="_0">0</string>
     <string name="meditation_streak">Meditation Streak</string>
+    <string name="chakra_cuning">Chakra Cuning</string>
+    <string name="source_code">Source Code</string>
+    <string name="g_space">G Space</string>
+    <string name="set_timer">Set Timer</string>
+    <string name="_00h_01m_00s">00H:01M:00S</string>
+    <string name="optimize">Optimize</string>
+    <string name="music">Music</string>
+    <string name="set_reminder">Set Reminder</string>
+    <string name="lock_landscape_mode">Lock Landscape Mode</string>
+    <string name="enter">ENTER</string>
+    <string name="g_space_settings">G Space Settings</string>
+    <string name="source_code_settings">Source Code Settings</string>
+    <string name="chakra_cuning_settings">Chakra Cuning settings</string>
 </resources>
