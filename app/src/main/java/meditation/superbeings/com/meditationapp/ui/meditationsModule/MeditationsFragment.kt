@@ -1,6 +1,7 @@
 package meditation.superbeings.com.meditationapp.ui.meditationsModule
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.GridLayoutManager
@@ -60,6 +61,12 @@ class MeditationsFragment : Fragment(), OnMeditationStartListener {
             transaction?.replace(R.id.container, subMeditationsFragment)
             transaction?.addToBackStack(null)
             transaction?.commit()
+        }
+        else if(meditation.title == Constants.advChakra || meditation.title == Constants.basicChakra)
+        {
+            val intent:Intent = Intent(activity!!.applicationContext, DoMeditation::class.java)
+            intent.putExtra("meditation", meditation)
+            startActivity(intent)
         }
     }
 

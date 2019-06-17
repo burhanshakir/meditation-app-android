@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.settingsModule.SetTimerActivity"/>
+        <activity
+                android:name=".ui.meditationsModule.DoMeditation"
+                android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
