@@ -5,10 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.meditation_item.view.*
 import kotlinx.android.synthetic.main.meditation_item.view.ivMeditation
 import kotlinx.android.synthetic.main.meditation_item.view.tvTitle
-import kotlinx.android.synthetic.main.sub_meditation_item.view.*
 import meditation.superbeings.com.meditationapp.R
 import meditation.superbeings.com.meditationapp.data.Meditation
 import meditation.superbeings.com.meditationapp.utils.Constants
