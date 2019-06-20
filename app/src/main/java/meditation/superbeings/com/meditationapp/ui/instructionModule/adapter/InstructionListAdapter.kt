@@ -11,6 +11,7 @@ import meditation.superbeings.com.meditationapp.data.MeditationInstruction
 class InstructionListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
     private var instructions = listOf<MeditationInstruction>()
+    private lateinit var listener : OnInstructionClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): RecyclerView.ViewHolder
     {
@@ -25,21 +26,27 @@ class InstructionListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
     override fun onBindViewHolder(viewholder: RecyclerView.ViewHolder, position: Int)
     {
         val instructionHolder = viewholder as MeditationInstructionListViewHolder
-        instructionHolder.bindView(instructions[position])
+        instructionHolder.bindView(instructions[position], listener)
     }
 
-    fun setInstructions(instructions:List<MeditationInstruction>)
+    fun setInstructions(instructions:List<MeditationInstruction>, listener: OnInstructionClickListener)
     {
         this.instructions = instructions
+        this.listener = listener
         notifyDataSetChanged()
     }
 
     class MeditationInstructionListViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView)
     {
-        fun bindView(instruction : MeditationInstruction)
+        fun bindView(instruction : MeditationInstruction, listener: OnInstructionClickListener)
         {
             itemView.tvMedName.text = instruction.name
             itemView.tvMeditationDescription.text = instruction.description
+
+            itemView.bViewInstruction.setOnClickListener(View.OnClickListener {
+                listener.onInstructionClicked(meditation = instruction)
+            })
+
         }
     }
 

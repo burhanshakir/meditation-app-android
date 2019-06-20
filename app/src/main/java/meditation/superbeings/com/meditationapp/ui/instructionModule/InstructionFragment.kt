@@ -11,9 +11,11 @@ import android.view.ViewGroup
 
 import meditation.superbeings.com.meditationapp.R
 import meditation.superbeings.com.meditationapp.data.DataService
+import meditation.superbeings.com.meditationapp.data.Meditation
+import meditation.superbeings.com.meditationapp.data.MeditationInstruction
 import meditation.superbeings.com.meditationapp.ui.instructionModule.adapter.InstructionListAdapter
+import meditation.superbeings.com.meditationapp.ui.instructionModule.adapter.OnInstructionClickListener
 
-// TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -22,8 +24,9 @@ private const val ARG_PARAM2 = "param2"
  * A simple [Fragment] subclass.
  *
  */
-class InstructionFragment : Fragment()
+class InstructionFragment : Fragment(), OnInstructionClickListener
 {
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
@@ -39,10 +42,7 @@ class InstructionFragment : Fragment()
 
         val adapter = InstructionListAdapter()
         recyclerView.adapter = adapter
-        adapter.setInstructions(instructions)
-
-
-
+        adapter.setInstructions(instructions, this)
 
         return v
     }
@@ -50,6 +50,21 @@ class InstructionFragment : Fragment()
     companion object
     {
         fun newInstance(): InstructionFragment = InstructionFragment()
+    }
+
+    override fun onInstructionClicked(meditation: MeditationInstruction)
+    {
+        val fragment = MeditationInstructionFragment.newInstance()
+        val bundle : Bundle = Bundle()
+
+        bundle.putSerializable("meditation",meditation)
+
+        fragment.arguments = bundle
+
+        val transaction = activity?.supportFragmentManager?.beginTransaction()
+        transaction?.replace(R.id.container, fragment)
+        transaction?.addToBackStack(null)
+        transaction?.commit()
     }
 
 
