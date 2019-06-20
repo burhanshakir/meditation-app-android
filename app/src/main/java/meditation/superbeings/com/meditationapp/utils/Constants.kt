@@ -22,6 +22,11 @@ object Constants
     const val prefsReminderFrequency = "reminderFrequency"
     const val prefsIsLandscapeLocked = "isLadscapeLocked"
 
+    const val latestMeditationPrefs = "Latest Meditation Prefs"
+    const val latestMeditationName = "Latest Meditation Name"
+    const val latestMeditationDescription = "Latest Meditation Description"
+
+
     fun getImageFromString(itemView : View, name : String, packageName : String) : Int
     {
         val image : Int = itemView.resources.getIdentifier(name,"drawable",packageName)

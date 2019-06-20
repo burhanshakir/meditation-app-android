@@ -41,6 +41,17 @@ class DoMeditation : AppCompatActivity()
         meditation = getIntent().getSerializableExtra("meditation") as Meditation
         selectedMeditationIndex = meditation.selectedMeditationIndex
         setUpViews()
+        storeLatestMeditationData()
+    }
+
+    private fun storeLatestMeditationData()
+    {
+        val sharedPreference =  getSharedPreferences(Constants.latestMeditationPrefs,Context.MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+
+        editor.putString(Constants.latestMeditationName, meditation.title)
+        editor.putString(Constants.latestMeditationDescription, meditation.description)
+        editor.apply()
     }
 
     @SuppressLint("ClickableViewAccessibility")
