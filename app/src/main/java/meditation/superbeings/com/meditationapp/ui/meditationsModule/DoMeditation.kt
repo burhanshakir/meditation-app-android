@@ -15,11 +15,15 @@ import kotlinx.android.synthetic.main.activity_do_meditation.*
 import meditation.superbeings.com.meditationapp.utils.Constants
 import meditation.superbeings.com.meditationapp.R
 import meditation.superbeings.com.meditationapp.data.Meditation
+import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 class DoMeditation : AppCompatActivity()
 {
     lateinit var meditation : Meditation
+    var totalMeditationTime : Int = 0
+    lateinit var currentDate : Date
     private var selectedMeditationIndex : Int = 0
     private var mediaPlayer : MediaPlayer? = null
 
@@ -51,6 +55,39 @@ class DoMeditation : AppCompatActivity()
 
         editor.putString(Constants.latestMeditationName, meditation.title)
         editor.putString(Constants.latestMeditationDescription, meditation.description)
+
+
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss", Locale.ENGLISH)
+        val currentDateString = sdf.format(Date())
+        currentDate = sdf.parse(currentDateString)
+
+        val lastMeditationDateString = sharedPreference.getString(Constants.lastMeditationDate, null)
+        var meditationStreak = sharedPreference.getInt(Constants.meditationStreak,0)
+        var totalMeditationDone = sharedPreference.getInt(Constants.totalMeditationDone,0)
+        totalMeditationTime = sharedPreference.getInt(Constants.totalMeditationTime,0)
+
+        if (lastMeditationDateString != null)
+        {
+            val lastMeditationDate = sdf.parse(lastMeditationDateString)
+            val diff = TimeUnit.DAYS.convert(currentDate.time - lastMeditationDate.time, TimeUnit.MILLISECONDS)
+
+            // If dates are consecutive, increase the counter else set the counter to 1
+            meditationStreak = if (diff == 1L) {
+                meditationStreak + 1
+            } else {
+                1
+            }
+
+        }
+        else
+        {
+            meditationStreak = 1
+        }
+
+        editor.putString(Constants.lastMeditationDate, sdf.format(currentDate))
+        editor.putInt(Constants.meditationStreak, meditationStreak)
+        editor.putInt(Constants.totalMeditationDone, totalMeditationDone+1)
+
         editor.apply()
     }
 
@@ -128,6 +165,7 @@ class DoMeditation : AppCompatActivity()
         bHome.setOnClickListener(View.OnClickListener {
 
             mediaPlayer?.stop()
+            storeMeditationTime()
             finish()
         })
 
@@ -166,6 +204,28 @@ class DoMeditation : AppCompatActivity()
         })
 
 
+    }
+
+    private fun storeMeditationTime()
+    {
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss", Locale.ENGLISH)
+
+        val timeforFinishString = sdf.format(Date())
+        val timeforFinish = sdf.parse(timeforFinishString)
+
+        val activityTimeRun = TimeUnit.SECONDS.convert(timeforFinish.time - currentDate.time , TimeUnit.MILLISECONDS)
+        totalMeditationTime = (totalMeditationTime + activityTimeRun).toInt()
+
+        val sharedPreference =  getSharedPreferences(Constants.latestMeditationPrefs,Context.MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+
+        val totalMeditationDone = sharedPreference.getInt(Constants.totalMeditationDone, 0)
+        val avgMedTime = totalMeditationTime/totalMeditationDone
+
+        editor.putInt(Constants.totalMeditationTime, totalMeditationTime)
+        editor.putInt(Constants.avgMeditationTime, avgMedTime)
+
+        editor.apply()
     }
 
     private fun changeImage(subMeditation : List<Meditation>, ivMeditation : ImageView)

@@ -21,7 +21,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvLatestMeditationName"
-                android:text="Advanecd Chakra Cuning"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:layout_marginBottom="10dp"/>
@@ -32,7 +31,6 @@
                 android:id="@+id/tvLatestMeditationDescription"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="16sp"
-                android:text="Experience the Stereoscopic View with music gchghm"
                 android:layout_marginBottom="5dp"/>
 
         <View android:layout_width="match_parent"

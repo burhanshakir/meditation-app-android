@@ -31,39 +31,39 @@ object DataService
     // Souce Code data
 
     private val sourceCodeSubMeditations = listOf(
-    Meditation(title= "Creating", imageName="creation"),
-    Meditation(title= "Astral", imageName="astral"),
-    Meditation(title= "Forward Thinking", imageName="forwardthinking"),
-    Meditation(title= "Relationships", imageName="relationships"),
-    Meditation(title= "Throat", imageName="throat"),
-    Meditation(title= "Envy", imageName="envy"),
-    Meditation(title= "Inner Strength", imageName="innerstrength"),
-    Meditation(title= "Weight", imageName="weight"),
-    Meditation(title= "Sacral", imageName="sacral"),
-    Meditation(title= "Sexuality", imageName="sexuality"),
-    Meditation(title= "Third Eye", imageName="third_eye"),
-    Meditation(title= "Solar Plex", imageName="solarplex"),
-    Meditation(title= "Vision", imageName="vision"),
-    Meditation(title= "What If", imageName="whatif"),
-    Meditation(title= "Release", imageName="release"),
-    Meditation(title= "Pain", imageName="pain"),
-    Meditation(title= "Manifest", imageName="manifest"),
-    Meditation(title= "Anger", imageName="anger"),
-    Meditation(title= "Skin", imageName="skin"),
-    Meditation(title= "Love", imageName="love"),
-    Meditation(title= "Language", imageName="language"),
-    Meditation(title= "Joy", imageName="joy"),
-    Meditation(title= "Heart", imageName="heart"),
-    Meditation(title= "Psychedelic", imageName="psychedelic"),
-    Meditation(title="Physical", imageName="physical"),
-    Meditation(title="Guilt", imageName="guilt"),
-    Meditation(title="Energy", imageName="energy"),
-    Meditation(title="Definitive Thinking", imageName="definitivethinking"),
-    Meditation(title="Crown", imageName="crown"),
-    Meditation(title="Clarity", imageName="clarity"),
-    Meditation(title="Centering", imageName="centeredness"),
-    Meditation(title="Circulation", imageName="circulation"),
-    Meditation(title="Base", imageName="base")
+    Meditation(title= "Creating", imageName="creation", thumbnail = "creations_sm"),
+    Meditation(title= "Astral", imageName="astral", thumbnail = "astrals_sm"),
+    Meditation(title= "Forward Thinking", imageName="forwardthinking", thumbnail = "forwardthinkings_sm"),
+    Meditation(title= "Relationships", imageName="relationships", thumbnail = "relationships_sm"),
+    Meditation(title= "Throat", imageName="throat", thumbnail = "throats_sm"),
+    Meditation(title= "Envy", imageName="envy", thumbnail = "envys_sm"),
+    Meditation(title= "Inner Strength", imageName="innerstrength", thumbnail = "strengths_sm"),
+    Meditation(title= "Weight", imageName="weight", thumbnail = "weights_sm"),
+    Meditation(title= "Sacral", imageName="sacral", thumbnail = "sacrals_sm"),
+    Meditation(title= "Sexuality", imageName="sexuality", thumbnail = "sexualitys_sm"),
+    Meditation(title= "Third Eye", imageName="third_eye", thumbnail = "thirdeyes_sm"),
+    Meditation(title= "Solar Plex", imageName="solarplex", thumbnail = "solarplexs_sm"),
+    Meditation(title= "Vision", imageName="vision", thumbnail = "visions_sm"),
+    Meditation(title= "What If", imageName="whatif", thumbnail = "whatifs_sm"),
+    Meditation(title= "Release", imageName="release", thumbnail = "releases_sm"),
+    Meditation(title= "Pain", imageName="pain", thumbnail = "pains_sm"),
+    Meditation(title= "Manifest", imageName="manifest", thumbnail = "manifests_sm"),
+    Meditation(title= "Anger", imageName="anger", thumbnail = "angers_sm"),
+    Meditation(title= "Skin", imageName="skin", thumbnail = "skins_sm"),
+    Meditation(title= "Love", imageName="love", thumbnail = "loves_sm"),
+    Meditation(title= "Language", imageName="language", thumbnail = "languages_sm"),
+    Meditation(title= "Joy", imageName="joy", thumbnail = "joys_sm"),
+    Meditation(title= "Heart", imageName="heart", thumbnail = "hearts_sm"),
+    Meditation(title= "Psychedelic", imageName="psychedelic", thumbnail = "psychedelics_sm"),
+    Meditation(title="Physical", imageName="physical", thumbnail = "physicals_sm"),
+    Meditation(title="Guilt", imageName="guilt", thumbnail = "guilts_sm"),
+    Meditation(title="Energy", imageName="energy", thumbnail = "energys_sm"),
+    Meditation(title="Definitive Thinking", imageName="definitivethinking", thumbnail = "definitivethinkings_sm"),
+    Meditation(title="Crown", imageName="crown", thumbnail = "crowns_sm"),
+    Meditation(title="Clarity", imageName="clarity", thumbnail = "claritys_sm"),
+    Meditation(title="Centering", imageName="centeredness", thumbnail = "centerednesss_sm"),
+    Meditation(title="Circulation", imageName="circulation", thumbnail = "circulations_sm"),
+    Meditation(title="Base", imageName="base", thumbnail = "bases_sm")
     )
 
     // GSpace Image
@@ -114,9 +114,9 @@ object DataService
     {
         return listOf(
 
-            Meditation(title = "Centeredness", imageName = "centeredness"),
-            Meditation(title = "Solarplex", imageName = "solarplex"),
-            Meditation(title = "Forward Thinking", imageName = "forwardthinking")
+            Meditation(title = "Centeredness", imageName = "centerednesss_sm"),
+            Meditation(title = "Solarplex", imageName = "solarplexs_sm"),
+            Meditation(title = "Forward Thinking", imageName = "forwardthinkings_sm")
         )
     }
 

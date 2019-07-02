@@ -1,12 +1,12 @@
 package meditation.superbeings.com.meditationapp.utils
 
-import android.graphics.drawable.Drawable
 import android.view.View
 
 object Constants
 {
-    const val basicChakra = "Basic Chakra"
-    const val advChakra = "Advanced Chakra"
+    const val basicChakra = "Basic Chakra Cuning"
+    const val advChakra = "Advanced Chakra Cuning"
+    const val advChakraDesc = "Experience the Stereoscopic View with Music"
     const val sourceCode = "Source Code"
     const val gspace = "G Space"
 
@@ -25,6 +25,12 @@ object Constants
     const val latestMeditationPrefs = "Latest Meditation Prefs"
     const val latestMeditationName = "Latest Meditation Name"
     const val latestMeditationDescription = "Latest Meditation Description"
+    const val lastMeditationDate = "Last Meditation Date"
+    const val meditationStreak = "Meditation Streak"
+    const val totalMeditationDone = "Total Meditation Done"
+    const val totalMeditationTime = "Total Meditation Time"
+    const val avgMeditationTime = "Avg Meditation Time"
+
 
 
     fun getImageFromString(itemView : View, name : String, packageName : String) : Int

@@ -1,6 +1,7 @@
 package meditation.superbeings.com.meditationapp.ui.meditationsModule.adapter
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,8 +49,9 @@ class SubMeditationListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
         fun bindView(meditation : Meditation)
         {
             itemView.tvTitle.text = meditation.title
+            Log.e("Thumbnail", meditation.thumbnail)
             Picasso.get()
-                .load(Constants.getImageFromString(itemView, meditation.imageName, itemView.context.packageName))
+                .load(Constants.getImageFromString(itemView, meditation.thumbnail, itemView.context.packageName))
                 .into(itemView.ivMeditation)
 
 //            itemView.ivMeditation.setImageResource(Constants.getImageFromString(itemView, meditation.imageName, itemView.context.packageName))
